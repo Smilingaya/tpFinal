@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+:root {
+  /*color*/
+  --deep-navy: #001f3f;
+  --charcal-grey: #333333;
+  --mutard-yellow: #ffdb58;
+  --blue-150: #2f1c6a;
+  --blue-50: #17a2b8;
+  --blue-100: #007bff;
+  --blue-cyan: #17a2b8;
+  --light-white: #f8f9fa;
+  --dark-white: #f5f5f5;
+  --white: #f4f5ff;
+  /*fonts*/
+  --font-weight-reg: 400;
+  --font-weight-semi: 600;
+  --font-family: "Bai Jamjuree", "sans-serif";
+  --font-family1: "poppins", "san-serif";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: var(--font-family);
+}
+.logo {
+  top: 0;
+  right: 0;
+  transform: translate(-200%, -410%);
+}
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.wrapper h2 {
+  font-size: 32px;
+  color: var(--dark-white);
+  text-align: center;
+}
+.wrapper .input_box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 25px 0;
+}
+.input_box input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid white;
+}
+
+.input_box label {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.input_box input:focus ~ label,
+.input_box input:valid ~ label {
+  top: -5px;
+  color: #999;
+}
+.input_box i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #fff;
+}
+button {
+  position: relative;
+  width: 100%;
+  margin-top: 5%;
+  height: 45px;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: var(--font-weight-semi);
+  transition: 0.5s;
+}
+button:hover {
+  background-color: rgb(70, 10, 10);
+}
+/*rgb(153, 25, 25)*/
+/*#14505ac3*/

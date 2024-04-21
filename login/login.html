@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./login.css" />
+    <title>LOGIN</title>
+  </head>
+  <body class="body">
+    <img class="logo" src="../images/car-logo.png" alt="" />
+    <div class="wrapper">
+      <h2>LOGIN</h2>
+      <form action="login.php" method="post">
+        <div class="input_box">
+          <input type="text" name="firstN" />
+          <label>first name</label>
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input_box">
+          <input type="text" name="lastN" />
+          <label>last name</label>
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input_box">
+          <input type="text" name="email" />
+          <label>Email</label>
+          <i class="bx bxl-gmail"></i>
+        </div>
+        <div class="input_box">
+          <input type="password" name="password" />
+          <label>password</label>
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+        <button type="submit">LOGIN</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    let bodybg = document.querySelector("body");
+    setInterval(() => {
+      bodybg.style.backgroundImage = "url(../images/bg-light.jpg)";
+      setTimeout(() => {
+        bodybg.style.backgroundImage = "url(../images/bg.jpg)";
+      }, 1000);
+    }, 2200);
+  </script>
+</html>

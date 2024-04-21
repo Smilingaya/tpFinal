@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+:root {
+  /*fonts*/
+  --font-weight-reg: 400;
+  --font-weight-semi: 600;
+  --font-weight-bold: 700;
+
+  --font-family: "Bai Jamjuree", "sans-serif";
+  --font-family1: "poppins", "san-serif";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  width: 90%;
+  text-align: center;
+}
+h1 {
+  font-size: 100px;
+  color: rgb(79, 4, 4);
+  font-weight: var(--font-weight-semi);
+}
+h1 span {
+  font-size: 120px;
+  font-weight: var(--font-weight-bold);
+}
+h3 {
+  font-size: 30px;
+}
+.card2 p {
+  font-size: 20px;
+  margin: 15px auto 40px;
+}
+.card2 a {
+  margin: 40px auto;
+  color: #fff;
+  padding: 15px 30px;
+  background-color: rgb(49, 44, 44);
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: var(--font-weight-semi);
+}
+a:hover {
+  text-decoration: underline;
+}
+.card1 img {
+  width: 700px;
+  height: 500px;
+}
