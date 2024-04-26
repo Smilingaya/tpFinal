@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/car-logo.png">
+    <link rel="stylesheet" href="./home.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="../images/car-logo.png" alt="logo">
+            <div class="profile">
+                <div class="username">
+                    <img class="profile-img" src="../images/profile.jpg">
+                    <p id="user-name">Benghalia ines</p>
+                </div>
+                <div class="more">
+                    <p id="email">ghalia.ines@gmail.come</p>
+                    <a href="../login.html">Log Out</a>
+                </div>
+            </div>
+            <img class="create" src="../images/create.png" alt="create">
+        </nav>
+    </header>
+
+    <main>
+        <div class="company renault">
+            <img src="../images/renault.png" alt="renault">
+            <h2>renault</h2>
+            <a class="see-cars" href="../cars/cars.html">see cars</a>
+        </div>
+        <div class="company peugeot">
+            <img src="../images/peugeot.png" alt="peugeot">
+            <h2>peugeot</h2>
+            <a class="see-cars" href="../cars/cars.html">see cars</a>
+        </div>
+        <div class="company hyundai">
+            <img src="../images/hyundai.png" alt="hyundai">
+            <h2>hyundai</h2>
+            <a class="see-cars" href="../cars/cars.html">see cars</a>
+        </div>
+        <div class="company kia">
+            <img src="../images/kia.png" alt="kia">
+            <h2>kia</h2>
+            <a class="see-cars" href="../cars/cars.html">see cars</a>
+        </div>
+    </main>
+
+    <div class="popup create-popup">
+        <div class="container create-container">
+          <h2>New company</h2>
+          <form>
+            <label for="company-name" >company name</label>
+            <input type="text" id="company-name" name="company-name" placeholder="add the company name">
+            <label for="company-logo" >company logo</label>
+            <input type="text" id="company-logo" name="company-logo" placeholder="add the company logo image">
+            <button id="cancel">Cancel</button>
+            <button id="submit">Submit</button>
+          </form>
+        </div>
+    </div>
+
+    <script src="./home.js"></script>
+
+</body>
+</html>

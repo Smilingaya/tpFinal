@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         exit();
     } else {
         // Login failed
-        header("LOCATION: error.html");
+        header("LOCATION: error/error.html");
         exit();
     }
 

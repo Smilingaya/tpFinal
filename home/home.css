@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+  /*color*/
+  --background:#161515;
+  --primary-text:#fff;
+  --red:rgb(70, 10, 10);
+  /*fonts*/
+  --font-weight-reg: 400;
+  --font-weight-semi: 600;
+  --font-family: "Bai Jamjuree", "sans-serif";
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-image: linear-gradient(-45deg, #221515 0%, #161515 15%,  rgb(26, 24, 24) 50%,black 100%);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-reg);
+}
+
+nav{
+  padding: 20px;
+  background-color:var(--background) ;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 100px;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.logo{
+  width: 50%;
+}
+
+.profile{
+  width: 200px;
+  height: 50px;
+  overflow-y: hidden;
+  position: absolute;
+  grid-column: 3/4;
+  color: var(--primary-text);
+  padding: 10px;
+  transition: all 1s;
+  
+}
+
+.profile:hover{
+  height: auto;
+  top: 30px;
+  background-color: var(--background);
+  padding: 10px;
+}
+
+.username{
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.profile a{
+  color: var(--primary-text);
+  text-decoration: none;
+}
+
+.more{
+  display: grid;
+  gap: 10px;
+}
+
+.create{
+  cursor: pointer;
+  grid-column: 4/5;
+}
+
+main{
+    padding: 55px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 50px;
+}
+
+.company{
+  display: grid;
+  grid-template-rows:1fr 1/2fr 1/2fr;
+  align-items: center;
+  justify-items: center;
+  gap: 15px;
+  height: 130px;
+  overflow-y: hidden;
+  padding: 25px;
+  transition: all 0.5s;
+} 
+
+h2{
+  color: #ffff;
+}
+
+.company:hover{
+  transform: scale(1.02);
+  background-color: transparent;
+  border:solid 2px var(--red);
+  background-color:var(--background);
+  border-radius: 40px;
+  box-shadow: 28px 28px 10px rgba(0, 0, 0, 0.15);
+  height: 260px;
+}
+
+main img{
+    width: 40%;
+}
+
+.hyundai img,.kia img{
+  width: 70%;
+  margin:4px 0;
+}
+
+.company a{
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  width: 70%;
+  padding: 10px 0;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.company a:hover{
+  border: 2px solid #000;
+  background-color: var(--red);
+  box-shadow: 5px 5px 20px var(--red);
+}
+
+.popup{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(225, 225,225, 0.3);
+  z-index: 100;
+  place-items: center;
+}
+
+.container{
+    width: 70%;
+    height: 90vh;
+    background-color: var(--background);
+    
+}
+
+.create-popup{
+  display: none;
+  & > .create-container {
+    height: auto;
+    padding: 40px;
+    & > form{
+      margin-top: 40px;
+      & > input{
+        background-color: transparent;
+        border: none;
+        font-family: var(--font-family);
+        font-size: .9rem;
+        color: var(--primary-text);
+        width: 90%;
+        height: 40px;
+        padding: 5px;
+        margin: 15px 0;
+        display:block;
+      }
+
+      & >label{
+        color: var(--primary-text);
+      }
+
+      & >button{
+        background-color: transparent;
+        border: none;
+        font-family: var(--font-family);
+        font-size: 1.1rem;
+        font-weight: var(--font-weight);
+        cursor: pointer;
+      }
+
+      & > #cancel{
+        color: red;
+        margin: 0 10px 0 85%;
+      }
+
+      & > #submit{
+        color:rgb(85, 85, 136);
+      }
+    }
+  }
+}
