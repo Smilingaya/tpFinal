@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if($result->num_rows == 1){
         // Login success
-        header("LOCATION: home.html");
+        header("LOCATION: ./home/home.php");
         exit();
     } else {
         // Login failed
