@@ -102,41 +102,43 @@ main {
 
 .car {
   display: grid;
-  grid-template-rows: 1fr 1/2fr 1/2fr;
+  grid-template-rows:1/4fr 1fr 1/4fr 1/4fr;
   align-items: center;
   justify-items: center;
   gap: 15px;
-  height: 150px;
-  overflow-y: hidden;
   padding: 25px;
-  transition: all 0.5s;
-}
-
-h2 {
-  color: #ffff;
-  font-size: 1.3rem;
-}
-
-.car:hover {
-  transform: scale(1.02);
-  background-color: transparent;
-  border: solid 2px var(--red);
-  background-color: var(--background);
-  border-radius: 40px;
-  box-shadow: 28px 28px 10px rgba(0, 0, 0, 0.15);
-  height: 300px;
+  overflow-x: hidden;
+  transition: all 1s;
 }
 .car .icon {
-  display: flex;
-  gap: 12rem;
+  gap: 10rem;
+  display: none;
 }
-.icon .bx {
+
+.bx {
   font-size: 24px;
   color: var(--primary-text);
   cursor: pointer;
 }
+h2 {
+  color: #ffff;
+  font-size: 1.3rem;
+  display: none;
+}
+
 main img {
   width: 100%;
+}
+
+.update-carNbr{
+  display: none;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center;
+  justify-items:center;
+}
+
+.update-carNbr p{
+  color: var(--primary-text);
 }
 
 .car .car-link {
@@ -149,12 +151,39 @@ main img {
   border-radius: 40px;
   cursor: pointer;
   transition: 0.5s;
+  display: none;
 }
 
-.car a:hover {
+.car .car-link:hover  {
   border: 2px solid #000;
   background-color: var(--red);
   box-shadow: 5px 5px 20px var(--red);
+}
+
+.car:hover h2{
+  display: block;
+}
+
+.car:hover .update-carNbr{
+  display: grid;
+}
+
+.car:hover .car-link{
+  display: block;
+}
+
+.car:hover .icon{
+  display: flex;
+}
+
+.car:hover {
+  transform: scale(1.02);
+  background-color: transparent;
+  border: solid 2px var(--red);
+  background-color: var(--background);
+  border-radius: 40px;
+  box-shadow: 28px 28px 10px rgba(0, 0, 0, 0.15);
+
 }
 
 .popup {
@@ -168,7 +197,7 @@ main img {
 }
 
 .container {
-  width: 70%;
+  width: 50%;
   height: 90vh;
   background-color: var(--background);
 }
@@ -178,6 +207,12 @@ main img {
   & > .create-container {
     height: auto;
     padding: 40px;
+
+    & >h2{
+      display: block;
+      color: #fff;
+    }
+
     & > form {
       margin-top: 40px;
       & > input {
@@ -197,23 +232,31 @@ main img {
         color: var(--primary-text);
       }
 
-      & > button {
-        background-color: transparent;
-        border: none;
-        font-family: var(--font-family);
-        font-size: 1.1rem;
-        font-weight: var(--font-weight);
-        cursor: pointer;
+      & > .btns{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        & > #cancel {
+          background-color: transparent;
+          border: none;
+          font-family: var(--font-family);
+          font-size: 1.1rem;
+          font-weight: var(--font-weight);
+          cursor: pointer;
+          color: red;
+        }
+  
+        & > #submit {
+          background-color: transparent;
+          border: none;
+          font-family: var(--font-family);
+          font-size: 1.1rem;
+          font-weight: var(--font-weight);
+          cursor: pointer;
+          color: rgb(85, 85, 136);
+        }
       }
 
-      & > #cancel {
-        color: red;
-        margin: 0 10px 0 85%;
-      }
-
-      & > #submit {
-        color: rgb(85, 85, 136);
-      }
     }
   }
 }

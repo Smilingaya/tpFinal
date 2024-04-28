@@ -46,11 +46,12 @@ $select = mysqli_query($conn, "SELECT * FROM mark");
         <div class="profile">
             <div class="username">
                 <img class="profile-img" src="../images/profile.jpg" alt="profile">
-                <p id="user-name">Benghalia ines</p>
+                <p id="user-name"></p>
             </div>
             <div class="more">
-                <p id="email">ghalia.ines@gmail.come</p>
-                <a href="../login.html">Log Out</a>
+                <p id="email"></p>
+                <a href="../user/user.html">admine page</a>
+                <a href="../index.html">Log Out</a>
             </div>
         </div>
         <img class="create" src="../images/create.png" alt="create">
@@ -61,7 +62,7 @@ $select = mysqli_query($conn, "SELECT * FROM mark");
    
     while($row = mysqli_fetch_assoc($select)) {
     ?>
-    <div class="company renault">
+    <div class="company">
         <div class="icon">
            <a href="admin_update.php?edit=<?php echo $row['id'];?>"><i class='bx bxs-edit'></i></a> 
            <a href="home.php?delete=<?php echo $row['id'];?>"><i class='bx bxs-trash'></i></a>
@@ -105,14 +106,27 @@ if(!empty($message)) {
             placeholder="add the company logo image"
             class="box"
           />
-          <button id="cancel">Cancel</button>
-          <input type="submit"id="submit" class="btn" name="add_mark" value="Submit">
+          <div class="btns">
+            <button id="cancel">Cancel</button>
+            <input type="submit"id="submit" class="btn" name="add_mark" value="Submit">
+          </div>
           
         </form>
       </div>
     </div>
 
-
     <script src="./home.js"></script>
+
+    <script>
+    // Retrieve user information from local storage
+    var firstN = localStorage.getItem('firstN');
+    var lastN = localStorage.getItem('lastN');
+    var email = localStorage.getItem('email');
+
+    // Display user information in profile section
+    document.getElementById('user-name').textContent = firstN + " " + lastN;
+    document.getElementById('email').textContent = email;
+    </script>
+
   </body>
 </html>

@@ -47,7 +47,8 @@ $select = mysqli_query($conn, "SELECT * FROM cars");
                 </div>
                 <div class="more">
                     <p id="email">ghalia.ines@gmail.come</p>
-                    <a href="../login.html">Log Out</a>
+                    <a href="../user/user.html">admine page</a>
+                    <a href="../index.html">Log Out</a>
                 </div>
             </div>
             <img class="create" src="../images/create.png" alt="create">
@@ -59,15 +60,19 @@ $select = mysqli_query($conn, "SELECT * FROM cars");
          while($row = mysqli_fetch_assoc($select)) {
         ?>
        
-        <div class="car PALISADE">
+        <div class="car">
         <div class="icon">
            <a href="admin_update.php?edit=<?php echo $row['id'];?>"><i class='bx bxs-edit'></i></a> 
            <a href="cars.php?delete=<?php echo $row['id'];?>"><i class='bx bxs-trash'></i></a>
-            
         </div>
         <img src="../image/<?php echo $row['car_img']; ?>" alt=" ">
         <h2><?php echo $row['car_name']; ?></h2>
-            <a class="car-link" href="../car/car.html">see the car</a>
+        <div class="update-carNbr">
+            <i class='bx bx-plus' style='color:#ffffff'  ></i>
+            <p class="carNbr"><?php echo $row['car-nbr']; ?></p>
+            <i class='bx bx-minus'></i>
+        </div>
+        <a class="car-link" href="../car/car.html">see the car</a>
         </div>
         <?php } ?>
     </main>
@@ -86,13 +91,32 @@ if(!empty($message)) {
             <input type="text" id="car-name" name="car_name" placeholder="add the car name">
             <label for="carr-img" >car image</label>
             <input  type="file"accept="image/png,image/jpeg,image/jpg" id="carr-img" name="car_img" placeholder="add the car image">
-            <button id="cancel">Cancel</button>
-            <input type="submit"id="submit" class="btn" name="add_car" value="Submit">
+            <div class="btns">
+                <button id="cancel">Cancel</button>
+                <input type="submit"id="submit" class="btn" name="add_car" value="Submit">
+            </div>
           </form>
         </div>
     </div>
 
+    <div class="popup create-popup">
+        <div class="container create-container">
+          
+        </div>
+    </div>
+
     <script src="./cars.js"></script>
+
+    <script>
+    // Retrieve user information from local storage
+    var firstN = localStorage.getItem('firstN');
+    var lastN = localStorage.getItem('lastN');
+    var email = localStorage.getItem('email');
+
+    // Display user information in profile section
+    document.getElementById('user-name').textContent = firstN + " " + lastN;
+    document.getElementById('email').textContent = email;
+    </script>
 
 </body>
 </html>

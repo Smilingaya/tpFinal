@@ -16,17 +16,17 @@
       <h2>LOGIN</h2>
       <form action="login.php" method="post">
         <div class="input_box">
-          <input type="text" name="firstN" />
+          <input class="firstN" type="text" name="firstN" />
           <label>first name</label>
           <i class="bx bxs-user"></i>
         </div>
         <div class="input_box">
-          <input type="text" name="lastN" />
+          <input class="lastN" type="text" name="lastN" />
           <label>last name</label>
           <i class="bx bxs-user"></i>
         </div>
         <div class="input_box">
-          <input type="text" name="email" />
+          <input class="email" type="text" name="email" />
           <label>Email</label>
           <i class="bx bxl-gmail"></i>
         </div>
@@ -35,7 +35,7 @@
           <label>password</label>
           <i class="bx bxs-lock-alt"></i>
         </div>
-        <button type="submit">LOGIN</button>
+        <button class="login" type="submit">LOGIN</button>
       </form>
     </div>
   </body>
@@ -47,5 +47,20 @@
         bodybg.style.backgroundImage = "url(./images/bg.jpg)";
       }, 1000);
     }, 2200);
+
+    document.addEventListener('DOMContentLoaded', function() {
+            // Store user information in local storage
+            const loginBtn = document.querySelector('.login');
+            const firstN = document.querySelector('.firstN');
+            const lastN = document.querySelector('.lastN');
+            const email = document.querySelector('.email');
+
+            loginBtn.onclick = (event) => { 
+                localStorage.setItem('firstN', firstN.value);
+                localStorage.setItem('lastN', lastN.value);
+                localStorage.setItem('email', email.value);
+            }
+        });
+
   </script>
 </html>

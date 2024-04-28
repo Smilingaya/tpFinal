@@ -130,11 +130,33 @@ nav {
   border-radius: 5px;
   background-color: red;
 }
+.popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(225, 225, 225, 0.3);
+  z-index: 100;
+  place-items: center;
+}
+
+.container {
+  width: 50%;
+  height: 90vh;
+  background-color: var(--background);
+}
+
 .create-popup {
   display: none;
   & > .create-container {
     height: auto;
     padding: 40px;
+
+    & >h2{
+      display: block;
+      color: #fff;
+    }
+
     & > form {
       margin-top: 40px;
       & > input {
@@ -154,22 +176,14 @@ nav {
         color: var(--primary-text);
       }
 
-      & > button {
+      & > .btn {
         background-color: transparent;
         border: none;
         font-family: var(--font-family);
         font-size: 1.1rem;
         font-weight: var(--font-weight);
-        cursor: pointer;
-      }
-
-      & > #cancel {
-        color: red;
-        margin: 0 10px 0 85%;
-      }
-
-      & > #submit {
         color: rgb(85, 85, 136);
+        cursor: pointer;
       }
     }
   }

@@ -69,15 +69,6 @@ body {
         font-weight: var(--font-weight);
         cursor: pointer;
       }
-
-      & > #cancel {
-        color: red;
-        margin: 0 10px 0 85%;
-      }
-
-      & > #submit {
-        color: rgb(85, 85, 136);
-      }
     }
   }
 }

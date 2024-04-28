@@ -102,18 +102,17 @@ main {
 
 .company {
   display: grid;
-  grid-template-rows: 1fr 1/2fr 1/2fr;
+  grid-template-rows:1/3fr 1fr 1/3fr 1/3fr;
   align-items: center;
   justify-items: center;
   gap: 15px;
-  height: 150px;
-  overflow-y: hidden;
   padding: 25px;
+  overflow-x: hidden;
   transition: all 0.5s;
 }
 .company .icon {
-  display: flex;
-  gap: 12rem;
+  gap: 10rem;
+  display: none;
 }
 .icon .bx {
   font-size: 24px;
@@ -122,26 +121,11 @@ main {
 }
 h2 {
   color: #ffff;
-}
-
-.company:hover {
-  transform: scale(1.02);
-  background-color: transparent;
-  border: solid 2px var(--red);
-  background-color: var(--background);
-  border-radius: 40px;
-  box-shadow: 28px 28px 10px rgba(0, 0, 0, 0.15);
-  height: 260px;
+  display: none;
 }
 
 main img {
   width: 40%;
-}
-
-.hyundai img,
-.kia img {
-  width: 70%;
-  margin: 4px 0;
 }
 
 .company .see-cars {
@@ -154,12 +138,35 @@ main img {
   border-radius: 40px;
   cursor: pointer;
   transition: 0.5s;
+  display: none;
 }
 
-.company .see-cars:hover {
+.company .see-cars:hover  {
   border: 2px solid #000;
   background-color: var(--red);
   box-shadow: 5px 5px 20px var(--red);
+}
+
+.company:hover h2{
+  display: block;
+}
+
+.company:hover .see-cars{
+  display: block;
+}
+
+.company:hover .icon{
+  display: flex;
+}
+
+.company:hover {
+  transform: scale(1.02);
+  background-color: transparent;
+  border: solid 2px var(--red);
+  background-color: var(--background);
+  border-radius: 40px;
+  box-shadow: 28px 28px 10px rgba(0, 0, 0, 0.15);
+
 }
 
 .popup {
@@ -173,7 +180,7 @@ main img {
 }
 
 .container {
-  width: 70%;
+  width: 50%;
   height: 90vh;
   background-color: var(--background);
 }
@@ -183,6 +190,12 @@ main img {
   & > .create-container {
     height: auto;
     padding: 40px;
+
+    & >h2{
+      display: block;
+      color: #fff;
+    }
+
     & > form {
       margin-top: 40px;
       & > input {
@@ -211,13 +224,29 @@ main img {
         cursor: pointer;
       }
 
-      & > #cancel {
-        color: red;
-        margin: 0 10px 0 85%;
-      }
+      & > .btns{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
-      & > #submit {
-        color: rgb(85, 85, 136);
+        & > #cancel {
+          background-color: transparent;
+          border: none;
+          font-family: var(--font-family);
+          font-size: 1.1rem;
+          font-weight: var(--font-weight);
+          cursor: pointer;
+          color: red;
+        }
+  
+        & > #submit {
+          background-color: transparent;
+          border: none;
+          font-family: var(--font-family);
+          font-size: 1.1rem;
+          font-weight: var(--font-weight);
+          cursor: pointer;
+          color: rgb(85, 85, 136);
+        }
       }
     }
   }
